@@ -1,9 +1,8 @@
 import numpy as np
-import math
 
 
 def Gauss_fun(sigma, x):
-    return math.exp(-(x / sigma) ** 2 / 2) / (sigma * (2 * math.pi) ** 0.5)
+    return np.exp(-(x / sigma) ** 2 / 2) / (sigma * (2 * np.pi) ** 0.5)
 
 
 def Gauss_gen(sigma, size=3):
