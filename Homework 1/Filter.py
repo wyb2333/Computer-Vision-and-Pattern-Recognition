@@ -5,6 +5,7 @@ import time
 
 
 img = cv2.imread("Lena.jpg")
+img_grey = cv2.imread("Lena.jpg", 0)
 # img = cv2.imread("Lena_noise.jpg")
 # img = cv2.imread("cxk.jpeg")
 
@@ -55,6 +56,7 @@ for i in range(3):
 cv2.imshow("ori", img)
 cv2.imshow("gauss", img_gauss.astype("uint8"))
 cv2.imshow("gauss1d", img_gauss1d.astype("uint8"))
+cv2.imshow("gauss_minus", conv(image=img_grey, kernel=(kernel-Gauss_gen(1, size)), mode_conv=mode_conv, mode_padding=mode_padding).astype("uint8"))
 cv2.normalize(img_sharp, img_sharp, 0, 255, cv2.NORM_MINMAX)
 cv2.imshow("sharp", img_sharp.astype("uint8"))
 cv2.imshow("bi", img_bi.astype("uint8"))
